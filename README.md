@@ -70,7 +70,7 @@ Using Cipher Hub is as easy as 1-2-3. Here's how you can secure and restore your
 
 **KHADER SHAREEF MADANI**
 
-* **Email:** `infa.khadershareefi@gmail.com`
+* **Email:** `infa.khadershareef@gmail.com`
 * **GitHub:** `KHADERSHAREEF19`
 * **LinkedIn:** `KHADER SHAREEF MADANI`
 
