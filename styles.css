@@ -1,0 +1,156 @@
+
+        :root, :root[data-theme="dark"] {
+            --bg-primary: #030712;
+            --bg-secondary: rgba(17, 24, 39, 0.8);
+            --bg-card: rgba(31, 41, 55, 0.7);
+            --bg-hover: rgba(55, 65, 81, 0.5);
+            --bg-active: rgba(59, 130, 246, 0.2);
+            --bg-input: #1f2937;
+            --border-primary: rgba(55, 65, 81, 0.5);
+            --border-card: rgba(75, 85, 99, 0.3);
+            --border-active: #3b82f6;
+            --text-primary: #d1d5db;
+            --text-secondary: #9ca3af;
+            --text-headings: #ffffff;
+            --text-link: #60a5fa;
+            --text-link-hover: #93c5fd;
+            --scrollbar-track: #1f2937;
+            --scrollbar-thumb: #4b5563;
+            --scrollbar-thumb-hover: #6b7280;
+        }
+
+        :root[data-theme="light"] {
+            --bg-primary: #f9fafb;
+            --bg-secondary: rgba(255, 255, 255, 0.8);
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --bg-hover: rgba(229, 231, 235, 0.7);
+            --bg-active: rgba(59, 130, 246, 0.1);
+            --bg-input: #f3f4f6;
+            --border-primary: #d1d5db;
+            --border-card: #e5e7eb;
+            --border-active: #3b82f6;
+            --text-primary: #374151;
+            --text-secondary: #6b7280;
+            --text-headings: #111827;
+            --text-link: #2563eb;
+            --text-link-hover: #1d4ed8;
+            --scrollbar-track: #f3f4f6;
+            --scrollbar-thumb: #d1d5db;
+            --scrollbar-thumb-hover: #9ca3af;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .background-animation {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: linear-gradient(45deg, #1f2937, #111827, #030712, #374151);
+            background-size: 400% 400%; animation: gradientBG 20s ease infinite;
+        }
+        :root[data-theme="light"] .background-animation {
+            background: linear-gradient(45deg, #e0e7ff, #ffffff, #dbeafe, #f3f4f6);
+        }
+
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        .app-header {
+            position: sticky; top: 0; z-index: 40;
+            background-color: var(--bg-secondary);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-primary);
+        }
+        .content-area {
+            padding: 2rem 1rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .main-card {
+            background-color: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-card);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            transition: all 0.2s ease;
+            border-bottom: 3px solid transparent;
+            padding-bottom: 0.5rem;
+        }
+        .nav-link.active {
+            color: var(--text-headings);
+            border-bottom-color: var(--border-active);
+        }
+        .nav-link:hover:not(.active) { color: var(--text-headings); }
+        
+        .file-drop-area { border-style: dashed; transition: all 0.3s ease; border-color: var(--border-primary); }
+        .file-drop-area.dragover { background-color: var(--bg-active); border-color: var(--border-active); }
+        
+        .btn { transition: all 0.2s ease-in-out; transform: translateY(0); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 14px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.08); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: translateY(0); box-shadow: none; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        
+        .key-display { word-break: break-all; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+
+        .prose { color: var(--text-primary); }
+        .prose h1, .prose h2, .prose h3 { color: var(--text-headings); }
+        .prose strong { color: var(--text-link-hover); }
+        .prose a { color: var(--text-link); }
+        .prose p, .prose li { line-height: 1.7; }
+        .prose dt { color: var(--text-headings); }
+
+        /* ... all your existing styles ... */
+
+
+/* ================================================== */
+/* ============= START: FOOTER STYLES =============== */
+/* ================================================== */
+.app-footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
+    color: var(--text-secondary);
+}
+
+.footer-heading {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+    color: var(--text-headings);
+}
+
+.footer-text {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+}
+
+.footer-link {
+    font-size: 0.875rem; /* 14px */
+    color: var(--text-secondary);
+    transition: color 0.2s ease-in-out;
+    border-bottom: none !important; /* Override nav-link styles */
+    padding-bottom: 0 !important;
+}
+
+.footer-link:hover {
+    color: var(--text-link-hover);
+}
+
+.footer-icon {
+    color: var(--text-secondary);
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-icon:hover {
+    color: var(--text-headings);
+}
